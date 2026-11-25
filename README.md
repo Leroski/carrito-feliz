@@ -32,10 +32,10 @@ Si cambias `.env.local`, reinicia `npm run dev`: Next.js solo lo lee al arrancar
 ```bash
 npx supabase login
 npx supabase link --project-ref TU_REF
-npx supabase db push        # aplica la migración
+npx supabase db push --remote --include-seed   # crea las tablas y carga los productos en la nube
 ```
 
-Luego carga `supabase/seed.sql` desde el SQL Editor y usa las claves de *Project Settings → API*.
+Sin `--remote`, la CLI v3 aplica los cambios a la base local. Luego usa las claves de *Project Settings → API Keys*.
 
 ## Pruebas
 
