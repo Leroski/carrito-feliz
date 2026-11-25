@@ -4,7 +4,14 @@ import { createClient } from "@supabase/supabase-js";
 
 function variable(nombre: string): string {
   const valor = process.env[nombre];
-  if (!valor) throw new Error(`Falta la variable de entorno ${nombre} (ver .env.example)`);
+  if (!valor) {
+    throw new Error(
+      `Falta la variable de entorno ${nombre} en .env.local. ` +
+        "Levanta la BD con `npx supabase start` y copia las claves que muestra `npx supabase status` " +
+        "(Publishable/anon → SUPABASE_ANON_KEY, Secret/service_role → SUPABASE_SERVICE_ROLE_KEY). " +
+        "Después reinicia `npm run dev`.",
+    );
+  }
   return valor;
 }
 

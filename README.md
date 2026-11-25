@@ -7,7 +7,7 @@ E-commerce mínimo: catálogo de productos, carrito, boletas con impuesto fijo d
 
 ## Puesta en marcha (local)
 
-Requisitos: Node 22+ y Docker funcionando.
+Requisitos: **Node 22.12 o superior** (`nvm use` toma la versión de `.nvmrc`) y **Docker** funcionando.
 
 ```bash
 npm install
@@ -24,6 +24,8 @@ Variables (`.env.local`):
 | `SUPABASE_URL` | `API URL` (local: `http://127.0.0.1:54321`) |
 | `SUPABASE_ANON_KEY` | clave `anon` / `publishable` |
 | `SUPABASE_SERVICE_ROLE_KEY` | clave `service_role` / `secret` (solo servidor) |
+
+Si cambias `.env.local`, reinicia `npm run dev`: Next.js solo lo lee al arrancar.
 
 ### Usar Supabase en la nube en vez de Docker
 
